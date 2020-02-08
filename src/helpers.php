@@ -13,7 +13,7 @@ if (!function_exists('view')) {
      */
     function view(Response $response, string $twig_path): Response
     {
-        global $app;
-        return $app->getContainer()->view->render($response, $twig_path);
+        global $container;
+        return $container->view->render($response, $twig_path);
     }
 }
