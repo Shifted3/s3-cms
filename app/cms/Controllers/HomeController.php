@@ -6,8 +6,8 @@ use S3\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public static function index($request, $response)
+    public static function index($request, $response, $arguments)
     {
-        return view($response, 'pages/index.twig');
+        return view($response, 'pages.index');
     }
 }
