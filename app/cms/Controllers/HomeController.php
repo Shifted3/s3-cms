@@ -1,13 +1,13 @@
 <?php
 
-    namespace App\Controllers;
+namespace App\CMS\Controllers;
 
-    use S3\Controllers\Controller;
+use S3\Controllers\Controller;
 
-    class HomeController extends Controller
+class HomeController extends Controller
+{
+    public static function index($request, $response)
     {
-        function index($request, $response)
-        {
-            return $this->container->view->render($response, 'index.twig');
-        }
+        return view($response, 'pages/index.twig');
     }
+}
