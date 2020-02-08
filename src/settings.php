@@ -10,10 +10,6 @@
      *
      */
 
-    // Load ENV
-    $dotenv = \Dotenv\Dotenv::create(ROOT);
-    $dotenv->load();
-
     return [
         'settings' => [
             'displayErrorDetails' => true, // set to false in production

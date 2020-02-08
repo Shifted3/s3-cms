@@ -21,7 +21,7 @@ session_start();
 
 // Slim Framework Settings
 $settings = include_once ROOT . '/src/settings.php';
-$app      = new \Slim\App($settings);
+$app      = new \S3\App($settings);
 
 // S3 Framework Dependencies
 require_once ROOT . '/src/dependencies.php';
