@@ -24,8 +24,9 @@
     <link rel="stylesheet" type="text/css" href="style.css?{{ randomString }}" media="all" />
 
     <!-- Javascript -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/kickstart.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript" src="js/kickstart.js?{{ randomString }}"></script>
+    <script type="text/javascript" src="js/main.js?{{ randomString }}"></script>
 
 </head>
 <body>
@@ -41,7 +42,7 @@
     {% block scripts %}{% endblock %}
     <div id="footer">
         {% block footer %}{% endblock %}
-        &copy; Copyright 2018–2020 Defiant Gaming Community.
+        <p>&copy; Copyright 2018–{{ "now"|date("Y") }} Defiant Gaming Community.</p>
     </div>
 </footer>
 </html>
