@@ -20,34 +20,27 @@
     <meta name="description" content="{{ randomString }}" />  {# TODO: Should be configurable #}
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/kickstart.css?{{ randomString }}" media="all" /> {# Kickstart CSS #}
-    <link rel="stylesheet" type="text/css" href="style.css?{{ randomString }}" media="all" /> {# Main CSS File #}
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"> {# Pure CSS #}
+    <link rel="stylesheet" type="text/css" href="css/main.css?{{ randomString }}" media="all" /> {# Main CSS File #}
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> {# jQuery FancyBox #}
 
-    <!-- Javascript -->
+    <!-- JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script> {# jQuery #}
-    <script type="text/javascript" src="js/kickstart.js?{{ randomString }}"></script> {# Kickstart JavaScript #}
     <script type="text/javascript" src="js/main.js?{{ randomString }}"></script> {# Main JavaScript File #}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> {# jQuery FancyBox #}
-    <script src="https://kit.fontawesome.com/10d7a16c5b.js" crossorigin="anonymous"></script> {# FontAwesome Icons #}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.js"></script> {# jQuery FancyBox #}
+    <script type="text/javascript" src="https://kit.fontawesome.com/10d7a16c5b.js" crossorigin="anonymous"></script> {# FontAwesome Icons #}
 
 </head>
 <body>
-    <div id="nav">
+    <div class="header">
         {% block nav %}{% endblock %}
     </div>
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
-    <div class="clear"></div>
-</body>
-<footer>
+    {% block content %}{% endblock %}
+    {# <div class="clear"></div> #}
     {% block scripts %}{% endblock %}
-    <div id="footer">
-        {% block footer %}{% endblock %}
-        <p>&copy; Copyright 2018–{{ "now"|date("Y") }} Defiant Gaming Community.</p>
-    </div>
-</footer>
+</body>
+
 </html>
 
 

@@ -7,60 +7,130 @@
     {{ block("navbar", "partials/navigation.twig") }}
 {% endblock %}
 
-{% block content %}
-    {% include 'partials/hero.twig' %}
-    
-    <div class="grid">
-        <div class="col_12">
-            <div class="col_9">
-                <h3>An introduction to Shifted 3</h3>
-                <p><img class="align-left" src="http://placehold.it/340x200/4D99E0/ffffff.png&text=CMS PREVIEW" {#  width=
-                    "180" height="150" #}/>
-                    Shifted 3 is a content management system aimed to serve for World of Warcraft Emulation.
-                    Over the years many have tried to make a stable yet updated CMS for different if not all
-                    WoW emulators. Not all have succeeded, though. We are here to bring you a CMS that has
-                    never been seen before.</p>
-                <p>We utilize <strong>Twig</strong> as a template engine.</p> {# To Be Finished #}
-                <small>* WoW  = World of Warcraft</small>
-                  
-            </div>
-            {{ block("sidenav", "partials/navigation.twig") }}
-
-            <hr/>
-
-            <div class="col_4 center">
-                <i class="fa fa-mobile fa-4x"></i><h4 class="m-0">Responsive</h4>
-                <p>A responsive design also known as a mobile-friendly makes sure that your website will look amazing
-                    on every screen</p>
-            </div>
-
-            <div class="col_4 center">
-                <i class="fa fa-github fa-4x"></i><h4 class="m-0">Open Source</h4>
-                <p>Our software is open source because we depend on you. We are always happy to look at your ideas
-                    and contributions.</p>
-            </div>
-
-            <div class="col_4 center">
-                <i class="fa fa-tint fa-4x"></i><h4 class="m-0">Designer Friendly</h4>
-                <p>Our code standards allow designers and developers to easily adapt.</p>
-            </div>
-
-            {# <div class="col_3 center">
-                <h4 class="m-0">Column</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                    laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                    suscipit lobortis</p>
-            </div> #}
-        </div>
-
-    </div><!-- END GRID -->
-
+{% block footer %}
+    {{ block("footer", "partials/navigation.twig") }}
 {% endblock %}
 
 {% block scripts %}
 {% endblock %}
 
-{% block footer %}
+{% block content %}
+    {% include 'partials/hero.twig' %}
+
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 class="content-head is-center">Why choosing Shifted?</h2>
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                    <h3 class="content-subhead">
+                        <i class="fa fa-rocket"></i>
+                        Get Started Quickly
+                    </h3>
+                    <p>
+                        The installation process has never been easier. Shifted 3's installer will do all the job for you.
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-mobile"></i>
+                        Responsive Layouts
+                    </h3>
+                    <p>
+                        Shifted 3 has a design that will look awesome anywhere you visit the site.
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-th-large"></i>
+                        Modular
+                    </h3>
+                    <p>
+                        You can disable or enable modules or... even create one!
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        Plays Nice
+                    </h3>
+                    <p>
+                        You can connect Shifted 3 to your site with no obstacles.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon l-box-lrg pure-g">
+            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+                <a href="http://placehold.it/1360x800/4D99E0/ffffff.png&text=CMS PREVIEW" data-fancybox>
+                    <img src="http://placehold.it/340x200/4D99E0/ffffff.png&text=CMS PREVIEW" />
+                </a>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+                <h2 class="content-head content-head-ribbon">How is Shifted crafted?</h2>
+
+                <p>
+                    Shifted 3 is a content management system aimed to serve for World of Warcraft Emulation.
+                    Over the years many have tried to make a stable yet updated CMS for different if not all
+                    WoW emulators. Not all have succeeded, though. We are here to bring you a CMS that has
+                    never been seen before.
+                </p>
+                <p>
+                    Unlike other content management systems available for World of Warcraft emulators, Shifted
+                    is professionally coded with passion and joy. We love working on it.
+                </p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="content-head is-center">Have questions? Contact us.</h2>
+
+            <div class="pure-g">
+                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <form class="pure-form pure-form-stacked">
+                        <fieldset>
+
+                            <label for="name">Your Name</label>
+                            <input id="name" type="text" placeholder="Your Name">
+
+
+                            <label for="email">Your Email</label>
+                            <input id="email" type="email" placeholder="Your Email">
+
+                            <label for="password">Your Password</label>
+                            <input id="password" type="password" placeholder="Your Password">
+
+                            <button type="submit" class="pure-button">Sign Up</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+
+                    <h4>More Information</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    <div class="footer l-box">
+        {{ block("footer") }}
+    </div>
+    </div>
+
 {% endblock %}
+
 
