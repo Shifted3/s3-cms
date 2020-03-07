@@ -25,7 +25,10 @@
 		"psr-4": {
 			"S3\\": "src",
 			"App\\": "app"
-		}
+		},
+		"files": [
+			"src/helpers.php"
+		]
 	},
 	"require": {
 		"ext-pdo": "*",
