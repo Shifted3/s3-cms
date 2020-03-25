@@ -2,12 +2,12 @@
 
 namespace App\CMS\Controllers;
 
-use S3\Controllers\Controller;
+use S3\Controllers\BaseController;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
-    public static function index($request, $response, $arguments)
+    public static function index()
     {
-        return view($response, 'pages.index');
+        return view('pages.index');
     }
 }

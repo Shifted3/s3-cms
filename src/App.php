@@ -22,7 +22,7 @@ class App extends Application
     protected function loadMiddlewares(): void
     {
         $middlewares = [
-            new TestMiddleware
+            new TestMiddleware,
         ];
 
         foreach ($middlewares as $middleware) {

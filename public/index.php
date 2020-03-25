@@ -29,9 +29,6 @@ require_once ROOT . '/src/dependencies.php';
 // S3 Framework Routes
 require_once ROOT . '/src/routes.php';
 
-// S3 Framework Helper functions
-require_once ROOT . '/src/helpers.php';
-
 // Application Loader
 $dirs = array_map('basename', glob(APP_ROOT . "/*", GLOB_ONLYDIR));
 //print_r($dirs);

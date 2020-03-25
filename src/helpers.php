@@ -1,5 +1,6 @@
 <?php
 
+use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 
 /**
@@ -21,16 +22,16 @@ if (!function_exists('view')) {
      * @param string $view_path Can use / or . as directory path
      * @param array $data
      *
-     * @return Response
+     * @return Psr\Http\Message\ResponseInterface;
      */
-    function view(Response $response, string $view_path, array $data = []): Response
+    function view(string $view_path, array $data = []): ResponseInterface
     {
         global $container;
 
-        if (!str_contains($view_path, '/')) {
+        if (! str_contains($view_path, '/')) {
             $view_path = explode('.', $view_path);
 
-            if (!is_bool($view_path) && is_array($view_path)) {
+            if (! is_bool($view_path) && is_array($view_path)) {
                 $new_path = "";
                 foreach ($view_path as $key => $value) {
                     if (++$key != count($view_path)) {
@@ -44,11 +45,15 @@ if (!function_exists('view')) {
             }
         }
 
-        if (!str_contains($view_path, '.twig')) {
-            $view_path = $view_path . '.twig';
+        if (! str_contains($view_path, '.twig')) {
+            $view_path .= '.twig';
         }
 
-        return $container->view->render($response, $view_path, $data);
+        return $container->view->render(
+            $container->get('response'),
+            $view_path,
+            $data
+        );
     }
 }
 
@@ -64,5 +69,21 @@ if (!function_exists('str_contains')) {
     function str_contains(string $haystack, string $needle): bool
     {
         return strpos($haystack, $needle) !== false;
+    }
+}
+
+if (! function_exists('request')) {
+    function request()
+    {
+        global $container;
+        return $container->get('request');
+    }
+}
+
+if (! function_exists('response')) {
+    function response()
+    {
+        global $container;
+        return $container->get('response');
     }
 }
