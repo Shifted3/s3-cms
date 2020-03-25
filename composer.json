@@ -37,5 +37,8 @@
 		"catfan/medoo": "^1.7",
 		"monolog/monolog": "^2.0",
 		"vlucas/phpdotenv": "^3.4"
+	},
+	"scripts": {
+		"server" : "php -S 127.0.0.1:8000 -t public public/index.php"
 	}
 }
